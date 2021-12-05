@@ -8,6 +8,7 @@ ANGGOTA TEAM
 メLord Aril⁴̅⁰͍⁴̵l
 メLord Pebri⁴̅⁰͍⁴̵
 メLord Galih⁴̅⁰͍⁴
+Gak Subrek Error
 */
 const
 	{
@@ -232,7 +233,7 @@ return dDisplay + hDisplay + mDisplay + sDisplay;
   }
 }
         const reply = (teks) => {
-            Valkyrie.sendMessage(from, teks, text, {quoted:fvid})
+            Valkyrie.sendMessage(from, teks, text, {quoted:fgi})
         }
 //Button
 const sendButImage = async(id, text1, desc1, gam1, but = [], options = {}) => {
@@ -457,7 +458,7 @@ const fdoc = {
                         },
        message: {
                     documentMessage: {
-                    title: `${ucapanWaktu} ${pushname}`, 
+                    title: `${ucapanWaktu}\n${date}`, 
                     jpegThumbnail: fs.readFileSync('./stik/thumb.jpeg')
                           }
                         }
@@ -481,11 +482,11 @@ const fdoc = {
                 },
 	 message: { 
                  "videoMessage": { 
-                 "title": `${ucapanWaktu} ${pushname}`,
-                 "h": `${ucapanWaktu} ${pushname}`,
+                 "title": `${ucapanWaktu}\n${date}\n${kyun(run)}`,
+                 "h": `${ucapanWaktu}\n${date}\n${kyun(run)}`,
                  'duration': '99999', 
                  'gifPlayback': 'true', 
-                 'caption': `${ucapanWaktu} ${pushname}`,
+                 'caption': `${ucapanWaktu}\n${date}\n${kyun(run)}`,
                  'jpegThumbnail': fs.readFileSync('./stik/thumb.jpeg')
                         }
                        }
@@ -498,10 +499,10 @@ const fdoc = {
                 },
 	 message: { 
                  "videoMessage": { 
-                 "title": `${ucapanWaktu}`,
-                 "h": `${ucapanWaktu}`,
+                 "title": `${ucapanWaktu}\n${date}`,
+                 "h": `${ucapanWaktu}\n${date}`,
                  'duration': '99999', 
-                 'caption': `${ucapanWaktu}`,
+                 'caption': `${ucapanWaktu}\n${date}`,
                  'jpegThumbnail': fs.readFileSync('./stik/thumb.jpeg')
                         }
                        }
@@ -1875,7 +1876,7 @@ ${anime.desc}\n\n*Link Batch* : ${anime.batch}\n*Link Download SD* : ${anime.bat
             }
             break
 case 'cerpen':
-                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/cerpen?apikey=KurrXd`)
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/cerpen?apikey=GuraHentai095`)
                     get_result = get_result.result
                     ini_txt = `Title : ${get_result.title}\n`
                     ini_txt += `Creator : ${get_result.creator}\n`
@@ -1891,7 +1892,7 @@ case 'cerpen':
           },]);
         break;
         case 'ceritahoror':
-                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/ceritahoror?apikey=KurrXd`)
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/ceritahoror?apikey=GuraHentai095`)
                     get_result = get_result.result
                     ini_txt = `Title : ${get_result.title}\n`
                     ini_txt += `Desc : ${get_result.desc}\n`
@@ -1905,14 +1906,14 @@ case 'cerpen':
               Valkyrie.relayWAMessage(prep)
         break
 case 'quotes':
-    quotes = await fetchJson(`https://api.lolhuman.xyz/api/random/quotes?apikey=KurrXd`)
+    quotes = await fetchJson(`https://api.lolhuman.xyz/api/random/quotes?apikey=GuraHentai095`)
     quotes = quotes.result
     author = quotes.by
     quotes = quotes.quote
     reply(`_${quotes}_\n\n*â€• ${author}*`)
     break
 case 'quotesanime':
-    quotes = await fetchJson(`https://api.lolhuman.xyz/api/random/quotesnime?apikey=KurrXd`)
+    quotes = await fetchJson(`https://api.lolhuman.xyz/api/random/quotesnime?apikey=GuraHentai095`)
     quotes = quotes.result
     quote = quotes.quote
     char = quotes.character
@@ -2372,7 +2373,7 @@ case 'attp':
 //
 case 'cogan':
 reply(`✍️Tunggu Sebentar....`)
-buff = await getBuffer(`https://api.lolhuman.xyz/api/random/cogan?apikey=KurrXd`)
+buff = await getBuffer(`https://api.lolhuman.xyz/api/random/cogan?apikey=GuraHentai095`)
 wmn = `🐧KirBotz`
 trans = `Subrek YT : KirBotz×`
 but = [
@@ -2382,7 +2383,7 @@ but = [
 break
 case 'cecan':
 reply(`✍️Tunggu Sebentar....`)
-buff = await getBuffer(`https://api.lolhuman.xyz/api/random/cecan?apikey=KurrXd`)
+buff = await getBuffer(`https://api.lolhuman.xyz/api/random/cecan?apikey=GuraHentai095`)
 wmn = `🐧KirBotz`
 trans = `Subrek YT : KirBotz×`
 but = [
@@ -2745,7 +2746,7 @@ case 'buttonvideo':
                 case 'katabijak':
                 case 'pantun':
                 case 'bucin':
-                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/random/${command}?apikey=KurrXd`)
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/random/${command}?apikey=GuraHentai095`)
                    titid = get_result.result
                    sendButMessage(from, titid, `Klik Untuk Ke Quotes Selanjutnya`, [
           {
@@ -2757,7 +2758,7 @@ case 'buttonvideo':
           },]);
         break
 case 'randomnama':
-                    anu = await fetchJson(`https://api.lolhuman.xyz/api/random/nama?apikey=KurrXd`)
+                    anu = await fetchJson(`https://api.lolhuman.xyz/api/random/nama?apikey=GuraHentai095`)
                     dasi = anu.result
                    sendButMessage(from, dasi, `Klik Untuk Ke Quotes Selanjutnya`, [
           {
@@ -2782,7 +2783,7 @@ case 'randomnama':
         break
                     
                 case 'quotesimage':
-                    get_result = await getBuffer(`https://api.lolhuman.xyz/api/random/${command}?apikey=KurrXd`)
+                    get_result = await getBuffer(`https://api.lolhuman.xyz/api/random/${command}?apikey=GuraHentai095`)
                     await Valkyrie.sendMessage(from, get_result, image)
                     break
 case 'meme':
@@ -2843,7 +2844,7 @@ case 'chiisaihentai':
                 case 'biganimetiddies':
                 case 'animebellybutton':
                 case 'hentai4everyone':
-              buff = await getBuffer(`https://api.lolhuman.xyz/api/random/nsfw/${command}?apikey=KurrXd`)
+              buff = await getBuffer(`https://api.lolhuman.xyz/api/random/nsfw/${command}?apikey=GuraHentai095`)
               buttons = [{buttonId: `${prefix + command}`,buttonText:{displayText: `➡️Next`},type:1}]
               imageMsg = (await Valkyrie.prepareMessageMedia(buff, "imageMessage", { thumbnail: buff, })).imageMessage
               buttonsMessage = {footerText:'✗✗✗ Akira', imageMessage: imageMsg,
@@ -2893,7 +2894,7 @@ case 'bj':
                 case 'pussy_jpg':
                 case 'kemonomimi':
                 case 'nsfw_avatar':
-               buff = await getBuffer(`https://api.lolhuman.xyz/api/random2/${command}?apikey=KurrXd`)
+               buff = await getBuffer(`https://api.lolhuman.xyz/api/random2/${command}?apikey=GuraHentai095`)
                 buttons = [{buttonId: `${prefix + command}`,buttonText:{displayText: `➡️Next`},type:1}]
               imageMsg = (await Valkyrie.prepareMessageMedia(buff, "imageMessage", { thumbnail: buff, })).imageMessage
               buttonsMessage = {footerText:'✗✗✗ Akira', imageMessage: imageMsg,
@@ -2993,7 +2994,7 @@ case 'blackpink':
    case 'thunder':
               if (args.length == 0) return reply(`Example: ${prefix + command} text`)
               kipass = args.join(" ")
-              kontolmu = await getBuffer(`http://api.lolhuman.xyz/api/textprome/${command}?apikey=KurrXd&text=${kipass}`)
+              kontolmu = await getBuffer(`http://api.lolhuman.xyz/api/textprome/${command}?apikey=GuraHentai095&text=${kipass}`)
               Valkyrie.sendMessage(from, kontolmu, image, { quoted: mek})
               break
 case 'wetglass':
@@ -3026,7 +3027,7 @@ case 'wetglass':
    case 'freefire':
               if (args.length == 0) return reply(`Example: ${prefix + command} text`)
               ini_txt = args.join(" ")
-              ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/ephoto1/${command}?apikey=KurrXd&text=${ini_txt}`)
+              ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/ephoto1/${command}?apikey=GuraHentai095&text=${ini_txt}`)
               Valkyrie.sendMessage(from, ini_buffer, image, { quoted: mek})
               break
 case 'shadow':
@@ -3055,7 +3056,7 @@ case 'shadow':
     case 'carvedwood':
                if (args.length == 0) return reply(`Example: ${prefix + command} text`)
                lemari = args.join(" ")
-               ndasmu = await getBuffer(`http://api.lolhuman.xyz/api/photooxy1/${command}?apikey=KurrXd&text=${lemari}`)
+               ndasmu = await getBuffer(`http://api.lolhuman.xyz/api/photooxy1/${command}?apikey=GuraHentai095&text=${lemari}`)
                Valkyrie.sendMessage(from, ndasmu, image, { quoted: mek})
                break
 case 'pornhub':
@@ -3071,7 +3072,7 @@ case 'pornhub':
                     if (args.length == 0) return reply(`Example: ${prefix + command} LoL Human`)
                     txt1 = args[0]
                     txt2 = args[1]
-                    getBuffer(`https://api.lolhuman.xyz/api/textprome2/${command}?apikey=KurrXd&text1=${txt1}&text2=${txt2}`).then((gambar) => {
+                    getBuffer(`https://api.lolhuman.xyz/api/textprome2/${command}?apikey=GuraHentai095&text1=${txt1}&text2=${txt2}`).then((gambar) => {
                         Valkyrie.sendMessage(from, gambar, image, {thumbnail: Buffer.alloc(0), caption: `Subrek : KirBotz×`, quoted : mek})
                     })
                     break
@@ -3082,14 +3083,14 @@ case 'tiktok':
                     if (args.length == 0) return reply(`Example: ${prefix + command} LoL Human`)
                     txt1 = args[0]
                     txt2 = args[1]
-                    getBuffer(`https://api.lolhuman.xyz/api/photooxy2/${command}?apikey=KurrXd&text1=${txt1}&text2=${txt2}`).then((gambar) => {
+                    getBuffer(`https://api.lolhuman.xyz/api/photooxy2/${command}?apikey=GuraHentai095&text1=${txt1}&text2=${txt2}`).then((gambar) => {
                         Valkyrie.sendMessage(from, gambar, image, {thumbnail: Buffer.alloc(0), caption: `Subrek : KirBotz×`, quoted : mek})
                     })
                     break
                     case 'xnxxsearch':
     if (args.length == 0) return reply(`Example: ${prefix + command} Japanese`)
     query = args.join(" ")
-    get_result = await fetchJson(`https://api.lolhuman.xyz/api/xnxxsearch?apikey=KurrXd&query=${query}`)
+    get_result = await fetchJson(`https://api.lolhuman.xyz/api/xnxxsearch?apikey=GuraHentai095&query=${query}`)
     get_result = get_result.result
     ini_txt = ""
     for (var x of get_result) {
@@ -3105,7 +3106,7 @@ case 'tiktok':
     case 'xnxx':
     if (args.length == 0) return reply(`Example: ${prefix + command} https://www.xnxx.com/video-uy5a73b/mom_is_horny_-_brooklyn`)
     query = args.join(" ")
-    get_result = await fetchJson(`https://api.lolhuman.xyz/api/xnxx?apikey=KurrXd&url=${query}`)
+    get_result = await fetchJson(`https://api.lolhuman.xyz/api/xnxx?apikey=GuraHentai095&url=${query}`)
     get_result = get_result.result
     ini_txt = `Title : ${get_result.title}\n`
     ini_txt += `Duration : ${get_result.duration}\n`
@@ -3488,7 +3489,7 @@ case 'bcc':
     case 'test':
             run = process.uptime() 
             teks = `${kyun(run)}`
-            fakegroup(teks)
+            reply(teks)
             break  
 	case 'speed':
 	case 'ping':
@@ -3498,7 +3499,7 @@ case 'bcc':
 			const child = stdout.toString('utf-8')
 			const teks = child.replace(/Memory:/, "Ram:")
 			const pingnya = `*${teks}Speed: ${latensi.toFixed(4)} Second*`
-			fakegroup(pingnya)
+			reply(pingnya)
 			})
 			break  
     case 'totag':
