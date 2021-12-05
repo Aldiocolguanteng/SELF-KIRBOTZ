@@ -122,6 +122,9 @@ const getCmd = (id) => {
 function parseMention(text = '') {
 return [...text.matchAll(/@([0-9]{5,16}|0)/g)].map(v => v[1] + '@s.whatsapp.net')
 }
+const timeWib = moment.tz('Asia/Jakarta').format('HH:mm:ss')
+const timeWit= moment().tz('Asia/Makassar').format('HH:mm:ss')
+const timeWita = moment().tz('Asia/Jayapura').format('HH:mm:ss')
 //=================================================//
 module.exports = Valkyrie = async (Valkyrie, mek) => {
 	try {
@@ -458,7 +461,7 @@ const fdoc = {
                         },
        message: {
                     documentMessage: {
-                    title: `${ucapanWaktu}\n${date}`, 
+                    title: `${ucapanWaktu}\n${date}\n${runtime(process.uptime())}`, 
                     jpegThumbnail: fs.readFileSync('./stik/thumb.jpeg')
                           }
                         }
@@ -469,7 +472,7 @@ const fdoc = {
                         },
        message: {
                     liveLocationMessage: {
-                    caption: `${ucapanWaktu} ${pushname}`,
+                    caption: `${ucapanWaktu}\n${pushname}\n${runtime(process.uptime())}`,
                     jpegThumbnail: fs.readFileSync('./stik/thumb.jpeg')
                           }
                         }
@@ -482,11 +485,11 @@ const fdoc = {
                 },
 	 message: { 
                  "videoMessage": { 
-                 "title": `${ucapanWaktu}\n${date}\n${kyun(run)}`,
-                 "h": `${ucapanWaktu}\n${date}\n${kyun(run)}`,
+                 "title": `${ucapanWaktu}\n${date}\n${runtime(process.uptime())}`,
+                 "h": `${ucapanWaktu}\n${date}\n${runtime(process.uptime())}`,
                  'duration': '99999', 
                  'gifPlayback': 'true', 
-                 'caption': `${ucapanWaktu}\n${date}\n${kyun(run)}`,
+                 'caption': `${ucapanWaktu}\n${date}\n${runtime(process.uptime())}`,
                  'jpegThumbnail': fs.readFileSync('./stik/thumb.jpeg')
                         }
                        }
@@ -499,10 +502,10 @@ const fdoc = {
                 },
 	 message: { 
                  "videoMessage": { 
-                 "title": `${ucapanWaktu}\n${date}`,
-                 "h": `${ucapanWaktu}\n${date}`,
+                 "title": `${ucapanWaktu}\n${date}\n${runtime(process.uptime())}`,
+                 "h": `${ucapanWaktu}\n${date}\n${runtime(process.uptime())}`,
                  'duration': '99999', 
-                 'caption': `${ucapanWaktu}\n${date}`,
+                 'caption': `${ucapanWaktu}\n${date}\n${runtime(process.uptime())}`,
                  'jpegThumbnail': fs.readFileSync('./stik/thumb.jpeg')
                         }
                        }
@@ -1416,25 +1419,17 @@ menuh = `${ucapanWaktu} 𝐊𝐚𝐤 @${sender.split("@")[0]}
 
 「 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 」
 ꪶ ཻུ۪۪ꦽꦼ̷ _*${prefix}ytsearch*_ <query>
-ꪶ ཻུ۪۪ꦽꦼ̷ _*${prefix}igstalk*_ <query>
 ꪶ ཻུ۪۪ꦽꦼ̷ _*${prefix}play*_ <query>
 ꪶ ཻུ۪۪ꦽꦼ̷ _*${prefix}video*_ <query>
 ꪶ ཻུ۪۪ꦽꦼ̷ _*${prefix}ytmp3*_ <link>
 ꪶ ཻུ۪۪ꦽꦼ̷ _*${prefix}ytmp4*_ <link>
-ꪶ ཻུ۪۪ꦽꦼ̷ _*${prefix}ig*_ <link>
-ꪶ ཻུ۪۪ꦽꦼ̷ _*${prefix}igstory*_ <username>
-ꪶ ཻུ۪۪ꦽꦼ̷ _*${prefix}twitter*_ <link>
 ꪶ ཻུ۪۪ꦽꦼ̷ _*${prefix}tiktokwm*_ <link>
 ꪶ ཻུ۪۪ꦽꦼ̷ _*${prefix}tiktoknowm*_ <link>
-ꪶ ཻུ۪۪ꦽꦼ̷ _*${prefix}fb*_ <link>
-ꪶ ཻུ۪۪ꦽꦼ̷ _*${prefix}brainly*_ <query>
 ꪶ ཻུ۪۪ꦽꦼ̷ _*${prefix}image*_ <query>
 ꪶ ཻུ۪۪ꦽꦼ̷ _*${prefix}anime*_ <random>
 ꪶ ཻུ۪۪ꦽꦼ̷ _*${prefix}pinterest*_ <query>
 ꪶ ཻུ۪۪ꦽꦼ̷ _*${prefix}komiku*_ <query>
 ꪶ ཻུ۪۪ꦽꦼ̷ _*${prefix}lirik*_ <query>
-ꪶ ཻུ۪۪ꦽꦼ̷ _*${prefix}chara*_ <query>
-ꪶ ཻུ۪۪ꦽꦼ̷ _*${prefix}playstore*_ <query>
 ꪶ ཻུ۪۪ꦽꦼ̷ _*${prefix}otaku*_ <query>
 
 「 𝐎𝐓𝐇𝐄𝐑 」
@@ -1471,6 +1466,9 @@ Valkyrie.sendMessage(from, { contentText: `${menuh}`, footerText: `
 
 Runtime : *${runtime(process.uptime())}*
 Tanggal *${date}*
+${timeWib} *𝑾𝒊𝒃*
+${timeWita} *𝑾𝒊𝒕𝒂*
+${timeWit} *𝑾𝒊𝒕*
 
 Valkyrie·Team
 ANGGOTA TEAM
@@ -1481,6 +1479,34 @@ ANGGOTA TEAM
 メLord Pebri⁴̅⁰͍⁴̵
 メLord Galih⁴̅⁰͍⁴
 ̵`, buttons: [{ buttonId: `${prefix}donasi`, buttonText: { displayText: 'メ Donasi' }, type: 1 },{ buttonId: `${prefix}sewabot`, buttonText: { displayText: 'メ Sewabot' }, type: 1 }], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: tamnel, contextInfo: {mentionedJid: [sender, owner]}}}, 'buttonsMessage')
+break
+case 'rules':
+thu = await Valkyrie.getStatus(`${sender.split('@')[0]}@s.whatsapp.net`, MessageType.text)
+menuh = `${ucapanWaktu} 𝐊𝐚𝐤 @${sender.split("@")[0]}
+𒍮 𝙍𝙪𝙡𝙚𝙨 𝘽𝙤𝙩𝙯
+❒͡ 1. 𝑱𝒂𝒏𝒈𝒂𝒏 𝑺𝒑𝒂𝒎 𝑩𝒐𝒕𝒛
+      *sᴀɴᴋsɪ : ᴡᴀʀɴ/sᴏғᴛ ʙʟᴏᴄᴋ*
+❒͡ 2. 𝑱𝒂𝒏𝒈𝒂𝒏 𝑻𝒆𝒍𝒆𝒑𝒐𝒏 𝑩𝒐𝒕𝒛
+      *sᴀɴᴋsɪ : sᴏғᴛ ʙʟᴏᴄᴋ*
+❒͡ 3. 𝑱𝒂𝒏𝒈𝒂𝒏 𝑩𝒂𝒏𝒅𝒊𝒏𝒈 𝑩𝒐𝒕𝒛
+      *sᴀɴᴋsɪ : ʙʟᴏᴄᴋ ᴘᴇʀᴍᴀɴᴇɴ*
+
+𒍮 𝑶𝒘𝒏𝒆𝒓 𝑩𝒐𝒕𝒛 ↓↓
+_*https://wa.me/6287705048235*_`
+Valkyrie.sendMessage(from, { contentText: `${menuh}`, footerText: `
+*──────" 𝕭𝖔𝖙 𝕴𝖓𝖋𝖔 "──────*
+ 👤OWNER : *https://wa.me/6287705048235*
+ 💌EMAIL : *tesheroku123@gmail.com*
+ 🔎YT : *https://bit.ly/3BpBe1Z*
+ 🪀GROUP : *https://bit.ly/3Ene2TO*
+     Runtime : *${runtime(process.uptime())}*
+     Tanggal *${date}*
+     ${timeWib} *𝑾𝒊𝒃*
+     ${timeWita} *𝑾𝒊𝒕𝒂*
+     ${timeWit} *𝑾𝒊𝒕*
+
+*Jika Sudah Paham Rules Nya Silahkan Pencet Di Bawah Jika Tidak Kelihatan Ketik .menu*
+̵`, buttons: [{ buttonId: `${prefix}menu`, buttonText: { displayText: 'メ Menu' }, type: 1 }], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: tamnel, contextInfo: {mentionedJid: [sender, owner]}}}, 'buttonsMessage')
 break
 case "astetick":
     case "videoanime":
@@ -1712,21 +1738,6 @@ var imgs = await Valkyrie.prepareMessage('0@c.us', tamnel, image, { thumbnail: t
             res += `*Nama*: *${i.nama}\n*Link*: ${i.link}\n\n`
             }
             reply(res)
-            });
-            break
-    case 'igstory': 
-            if(!q) return reply('Usernamenya?')
-            hx.igstory(q)
-            .then(async result => {
-            for(let i of result.medias){
-                if(i.url.includes('mp4')){
-                    let link = await getBuffer(i.url)
-                    Valkyrie.sendMessage(from,link,video,{quoted: mek,caption: `Type : ${i.type}`})
-                } else {
-                    let link = await getBuffer(i.url)
-                    Valkyrie.sendMessage(from,link,image,{quoted: mek,caption: `Type : ${i.type}`})                  
-                }
-            }
             });
             break
 case 'bay':
@@ -3159,7 +3170,7 @@ case 'tiktok':
                 })
                 .on('end', function () {
                 console.log('Finish')
-                Valkyrie.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
+                Valkyrie.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: fgi})
                  fs.unlinkSync(media)
                 fs.unlinkSync(ran)
                 })
@@ -3184,7 +3195,7 @@ case 'tiktok':
             })
             .on('end', function () {
             console.log('Finish')
-            Valkyrie.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
+            Valkyrie.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: fgi})
             fs.unlinkSync(media)
             fs.unlinkSync(ran)
                 })
@@ -3315,7 +3326,7 @@ case 'tiktok':
             gis(gimg, async (error, result) => {
             n = result
             images = n[Math.floor(Math.random() * n.length)].url
-            Valkyrie.sendMessage(from,{url:images},image,{quoted:mek})
+            Valkyrie.sendMessage(from,{url:images},image,{quoted:fdoc})
             });
             break
  	case 'tiktokwm':
@@ -3334,55 +3345,8 @@ case 'tiktok':
             .then((data) => { sendMediaURL(from, data.result.nowatermark) })
             .catch((err) => { reply(String(err)) })
              break
-    case 'brainly':
-			if (args.length < 1) return reply('Pertanyaan apa')
-          	brien = args.join(' ')
-			brainly(`${brien}`).then(res => {
-			teks = '❉───────────────────────❉\n'
-			for (let Y of res.data) {
-			teks += `\n*「 _BRAINLY_ 」*\n\n*➸ Pertanyaan:* ${Y.pertanyaan}\n\n*➸ Jawaban:* ${Y.jawaban[0].text}\n❉──────────────────❉\n`
-			}
-			Valkyrie.sendMessage(from, teks, text,{quoted:mek,detectLinks: false})                        
-            })              
-			break
-    case 'ig':
-        if (!isUrl(args[0]) && !args[0].includes('instagram.com')) return reply(mess.Iv)
-        if (!q) return fakegroup('Linknya?')
-        sticWait(from)
-	    hx.igdl(args[0])
-	    .then(async(result) => {
-            for(let i of result.medias){
-                if(i.url.includes('mp4')){
-                    let link = await getBuffer(i.url)
-                    Valkyrie.sendMessage(from,link,video,{quoted: mek,caption: `Type : ${i.type}`})
-                } else {
-                    let link = await getBuffer(i.url)
-                    Valkyrie.sendMessage(from,link,image,{quoted: mek,caption: `Type : ${i.type}`})                  
-                }
-            }
-            });
-	    break
-    case 'igstalk':
-            if (!q) return fakegroup('Usernamenya?')
-            ig.fetchUser(`${args.join(' ')}`).then(Y => {
-            console.log(`${args.join(' ')}`)
-            ten = `${Y.profile_pic_url_hd}`
-            teks = `*ID* : ${Y.profile_id}\n*Username* : ${args.join('')}\n*Full Name* : ${Y.full_name}\n*Bio* : ${Y.biography}\n*Followers* : ${Y.followers}\n*Following* : ${Y.following}\n*Private* : ${Y.is_private}\n*Verified* : ${Y.is_verified}\n\n*Link* : https://instagram.com/${args.join('')}`
-            sendMediaURL(from,ten,teks) 
-            })      
-            break    
-    case 'fb':
-            if (!q) return reply('Linknya?')
-            if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(mess.Iv)
-            sticWait(from)
-            te = args.join(' ')
-            hx.fbdown(`${te}`)
-            .then(G => {
-            ten = `${G.HD}`
-            sendMediaURL(from,ten,`*Link video_normal* : ${G.Normal_video}`)
-            })
-            break    
 	case 'term':
+	        if (!isOwner) return  sticOwner(from)
 			if (!q) return fakegroup(mess.wrongFormat)
 			exec(q, (err, stdout) => {
 			if (err) return fakegroup(`SELF-BOT:~ ${err}`)
@@ -3391,7 +3355,7 @@ case 'tiktok':
 			}
 			})
 		    break 
-		    case 'bc':
+case 'bc':
              if (!isOwner) return  sticOwner(from)
              if (args.length < 1) return reply('teks?')
              anu = await Valkyrie.chats.all()
@@ -3465,6 +3429,7 @@ case 'bcc':
 
              break
     case 'join':
+            if (!isOwner) return  sticOwner(from)
             try {
             if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) return reply(mess.Iv)
             hen = args[0]
@@ -3476,14 +3441,6 @@ case 'bcc':
             } catch {
             fakegroup('LINK ERROR!')
             }
-            break
-    case'twitter':
-            if (!isUrl(args[0]) && !args[0].includes('twitter.com')) return reply(mess.Iv)
-            if (!q) return fakegroup('Linknya?')
-            ten = args[0]
-            var res = await hx.twitter(`${ten}`)
-            ren = `${g.HD}`
-            sendMediaURL(from,ren,'DONE')
             break
     case 'runtime':
     case 'test':
