@@ -38,7 +38,7 @@ module.exports = welcome = async (Valkyrie, anu) => {
                 anu_user = v.vname || v.notify || num.split('@')[0]
               teks = `Selamat Datang Kak *@${mem.split('@')[0]}*\n*➸ Welcome in group *${groupName}*\n*➸ Intro Dulu Kak*\n*➸ Nama :*\n*➸ Umur :* \n*➸ Hobi :*\n*➸ Jenis Kelamin :*\n*➸ Nomor :* ${mem.replace('@s.whatsapp.net', '')}\n*Semoga betah~~*`
               buff = await getBuffer(pic)
-               Valkyrie.sendMessage(mdata.id, { contentText: `${teks}`, footerText: `Welcome Message By *ValkyrieX4·Team*`, buttons: [{buttonId: `.selamatdatang`,buttonText:{displayText: 'WELCOME BWANG'},type:1},{buttonId: `.rules`,buttonText:{displayText:'Rules Bot'},type:1},{buttonId:`.infogrouup`,buttonText:{displayText:'Info Group'},type:1}],headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: buff, contextInfo: {"mentionedJid": [num]}}}, 'buttonsMessage')
+               Valkyrie.sendMessage(mdata.id, { contentText: `${teks}`, footerText: `Welcome Message By *ValkyrieX4·Team*`, buttons: [{buttonId: `.selamatdatang`,buttonText:{displayText: 'WELCOME KAK'},type:1},{buttonId: `.rules`,buttonText:{displayText:'RULES BOT'},type:1},{buttonId:`.infogrouup`,buttonText:{displayText:'INFO GROUP'},type:1}],headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: buff, contextInfo: {"mentionedJid": [num]}}}, 'buttonsMessage')
 		}
             if (anu.action == 'remove' && !mem.includes(Valkyrie.user.jid)) {
             if (!welkom.includes(anu.jid)) return
